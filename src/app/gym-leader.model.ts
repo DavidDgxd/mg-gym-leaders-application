@@ -8,3 +8,11 @@ export interface GymLeader{
     motto: string;
     pokemonteam: any;
 }
+
+export interface HoennLeader {
+  name: string;
+  town: string;
+  specialty: string;
+  badge: string;
+  pokemonTeam: string[];
+}

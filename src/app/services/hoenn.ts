@@ -1,4 +1,14 @@
-import { Service } from '@angular/core';
+import { Injectable, Service, signal } from '@angular/core';
 
 @Service()
-export class Hoenn {}
+export class HoennServices {
+    private registry = signal([
+        {
+            name: 'Ash Ketchum',
+            team: ['Pikachu', 'Bulbasaur', 'Charizard'],
+            items: ['Master Ball', 'Potion', 'Revive'],
+        }
+    ])
+
+    trainers = this.registry.asReadonly();
+}
