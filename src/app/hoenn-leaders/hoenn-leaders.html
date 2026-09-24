@@ -4,18 +4,28 @@
 
   <div class="leader-grid">
     @for (leader of hoennService.trainers(); track leader.name) {
-      <div class="leader-card">
-        <h2>{{ leader.name }}</h2>
-        <p><strong>Town:</strong> {{ leader.town }}</p>
-        <p><strong>Specialty:</strong> {{ leader.specialty }}</p>
-        <p><strong>Badge:</strong> {{ leader.badge }}</p>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-label">Gym Leader</span>
+            <h2>{{ leader.name }}</h2>
+          </div>
+        </div>
 
-        <p><strong>Pokémon Team:</strong></p>
-        <ul>
-          @for (pokemon of leader.pokemonTeam; track $index) {
-            <li>{{ pokemon }}</li>
-          }
-        </ul>
+        <p class="info-row"><strong>Badge:</strong> {{ leader.badge }}</p>
+        <p class="info-row"><strong>Town:</strong> {{ leader.town }}</p>
+        <p class="info-row"><strong>Specialty:</strong> {{ leader.specialty }}</p>
+
+        <div class="team">
+          <h4>Pokémon Team</h4>
+          <div class="pokemon-list">
+            @for (pokemon of leader.pokemonTeam; track $index) {
+              <div class="pokemon-item">
+                <span class="pokemon-name">{{ pokemon }}</span>
+              </div>
+            }
+          </div>
+        </div>
       </div>
     }
   </div>
