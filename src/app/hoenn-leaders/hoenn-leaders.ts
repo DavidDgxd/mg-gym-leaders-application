@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HoennServices } from '../services/hoenn';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './hoenn-leaders.css',
   templateUrl: './hoenn-leaders.html',
 })
-export class HoennLeaders {}
+export class HoennLeaders {
+  hoennService = inject(HoennServices);
+}

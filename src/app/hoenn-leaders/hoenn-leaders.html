@@ -1,1 +1,22 @@
-<p>hoenn-leaders works!</p>
+<div class="region-container">
+  <h1>Hoenn Region Gym Leaders</h1>
+  <p>Welcome to the Hoenn Region!</p>
+
+  <div class="leader-grid">
+    @for (leader of hoennService.trainers(); track leader.name) {
+      <div class="leader-card">
+        <h2>{{ leader.name }}</h2>
+        <p><strong>Town:</strong> {{ leader.town }}</p>
+        <p><strong>Specialty:</strong> {{ leader.specialty }}</p>
+        <p><strong>Badge:</strong> {{ leader.badge }}</p>
+
+        <p><strong>Pokémon Team:</strong></p>
+        <ul>
+          @for (pokemon of leader.pokemonTeam; track $index) {
+            <li>{{ pokemon }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</div>
