@@ -1,0 +1,37 @@
+<div class="card" [style.border-top-color]="typeColor()">
+    <div class="card-header">
+        <div>
+            <span class="card-label">Gym Leader</span>
+            <h3 [style.color]="typeColor()">{{ name() }}</h3>
+        </div>
+        @if (age()) {
+            <span class="age-badge">Age: {{ age() }}</span>
+        }
+    </div>
+
+    <p class="info-row"><strong>Badge:</strong> {{ gymBadge() }}</p>
+    <p class="info-row"><strong>Location:</strong> {{ location() }}</p>
+
+    <div class="team">
+        <h4>Pokémon Team</h4>
+        <div class="pokemon-list">
+            @for (pokemon of pokemonTeam(); track pokemon.name) {
+                <div class="pokemon-item">
+                    <div class="pokemon-header">
+                        <span class="pokemon-name">{{ pokemon.name }}</span>
+                        <span class="pokemon-level">Lvl {{ pokemon.level }}</span>
+                    </div>
+                    <span class="pokemon-type">{{ pokemon.type }}</span>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button (click)="toggleMotto()">Show Motto</button>
+
+        @if (showMotto()) {
+            <p class="motto-box"><em>"{{ motto() }}"</em></p>
+        }
+    </div>
+</div>

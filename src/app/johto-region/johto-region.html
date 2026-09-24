@@ -1,0 +1,16 @@
+<section class="johto-region">
+    <h1>Johto Region</h1>
+
+    <div class="card-grid">
+        @for (leader of JohtoLeaders(); track leader.name) {
+            <app-leader-info 
+                [name]="leader.name"
+                [location]="leader.location"
+                [gymBadge]="leader.badge"
+                [typeColor]="leader.typeColor"
+                [pokemonTeam]="leader.pokemonteam"
+                [motto]="leader.motto">
+            </app-leader-info>
+        }
+    </div>
+</section>

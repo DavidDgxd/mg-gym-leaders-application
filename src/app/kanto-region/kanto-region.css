@@ -1,0 +1,20 @@
+.kanto-region {
+  min-height: 100%;
+  padding: 2rem clamp(1rem, 4vw, 4rem);
+  background-color: #fdfdf5;
+}
+
+.kanto-region h1 {
+  margin: 0 0 2rem;
+  color: #a93636;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
